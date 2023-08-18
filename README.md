@@ -26,7 +26,7 @@ cd RTF-Converter
 
 ***Or, install using pip:***
 <br>
-pip install git+https://github.com/ClankDev/RTF-Converter.git
+pip install rtf-converter==0.0.3
 <br>
 <br><br><br>
 
