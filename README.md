@@ -26,7 +26,7 @@ cd RTF-Converter
 
 ***Install using pip:***
 <br>
-pip install rtf-converter==0.0.3
+pip install rtf-converter==0.0.4
 
 ***Install using npm:***
 <br>
