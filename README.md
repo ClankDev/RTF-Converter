@@ -24,9 +24,15 @@ git clone https://github.com/ClankDev/RTF-Converter.git
 <br>
 cd RTF-Converter
 
-***Or, install using pip:***
+***Install using pip:***
 <br>
 pip install rtf-converter==0.0.3
+<br>
+<br><br><br>
+
+***Install using npm:***
+<br>
+npm i rtf-converter
 <br>
 <br><br><br>
 
