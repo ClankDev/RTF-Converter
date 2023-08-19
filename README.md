@@ -34,7 +34,7 @@ npm i rtf-converter
 
 ***Install using composer:***
 <br>
-composer ClankAI/rtf-converter
+composer clank-ai/rtf-converter
 <br>
 <br><br><br>
 
