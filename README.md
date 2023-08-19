@@ -2,7 +2,7 @@
     Python, Javascript, PHP and C-Sharp RTF-Converter<br>
     RTF-Converter is a function that allows users to convert Rich Text Format (RTF) files into plain text using regular expressions.
 <br><br>
-  <img width="75%" src="https://github.com/ClankDev/RTF-Converter/sample-rtf.PNG">
+  <img width="75%" src="/sample-rtf.PNG">
 </p>   
 <br><br><br>
 <br><br>
