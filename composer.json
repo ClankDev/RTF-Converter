@@ -1,5 +1,5 @@
 {
-    "name": "ClankAI/rtf-converter",
+    "name": "clank-ai/rtf-converter",
     "description": "A simple RTF to Plain Text Converter",
     "type": "library",
     "require": {
