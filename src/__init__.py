@@ -1,1 +1,0 @@
-from .rtf_converter import rtf_to_text
