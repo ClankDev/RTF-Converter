@@ -1,7 +1,8 @@
 {
     "name": "clank-ai/rtf-converter",
-    "description": "A simple RTF to Plain Text Converter",
+    "description": "A simple RTF to Plain Text Converter using regular expressions. Support for PHP, Python, Javascript and CSharp",
     "type": "library",
+    "license": "MIT",
     "require": {
         "php": ">=7.0"
     },
