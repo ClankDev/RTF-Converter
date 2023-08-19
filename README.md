@@ -2,7 +2,7 @@
     Python, Javascript, PHP and C-Sharp RTF-Converter<br>
     RTF-Converter is a function that allows users to convert Rich Text Format (RTF) files into plain text using regular expressions.
 <br><br>
-  <img width="75%" src="/sample-rtf.PNG">
+  <img width="75%" src="https://github.com/ClankDev/RTF-Converter/sample-rtf.PNG">
 </p>   
 <br><br><br>
 <br><br>
@@ -43,7 +43,7 @@ composer clank-ai/rtf-converter
 *Convert a simple RTF string to plain text:*
 <br>
 ---------------------------------------------------------------------------------------
-<pre><code>from rtf-converter import rtf_to_txt
+<pre><code>from rtf_converter import rtf_to_txt
 
 # Sample RTF text
 rtf_text = r"{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fcharset0 Helvetica;}}{\colortbl ;\red255\green0\blue0;}\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural\f0\fs24 \cf0 Hello, World!}"
@@ -62,7 +62,7 @@ print(plain_text)  # Output: Hello, World!</pre></code>
 *Read file from the disk, convert its content to plain text using the rtf_to_txt function, and then save the result to a new text file:*
 <br>
 ---------------------------------------------------------------------------------------
-<pre><code>from rtf-converter import rtf_to_txt
+<pre><code>from rtf_converter import rtf_to_txt
 
 # Read RTF file
 with open('sample.rtf', 'r', encoding='utf-8') as file:
@@ -85,7 +85,7 @@ print("RTF has been successfully converted to plain text and saved as output.txt
 *In case the RTF content is not formatted correctly, the rtf_to_txt function might raise an exception. Here is how you can handle such errors gracefully:*
 <br>
 ---------------------------------------------------------------------------------------
-<pre><code>from rtf-converter import rtf_to_txt
+<pre><code>from rtf_converter import rtf_to_txt
 
 # Sample RTF text (potentially incorrect format)
 rtf_text = r"{\rtf1\ansi\Hello, World!}"
@@ -163,7 +163,7 @@ fetch('sample.rtf')
 ---------------------------------------------------------------------------------------
 <pre><code>&lt;?php
 // Include the RtfConverter class
-require 'path/to/RtfConverter.php';
+require 'path/to/rtf_converter.php';
 
 use RtfConverter\RtfConverter;
 
@@ -187,7 +187,7 @@ echo $plainText;  // Output: Hello, World!
 ---------------------------------------------------------------------------------------
 <pre><code>&lt;?php
 // Include the RtfConverter class
-require 'path/to/RtfConverter.php';
+require 'path/to/rtf_converter.php';
 
 use RtfConverter\RtfConverter;
 
@@ -214,7 +214,7 @@ echo "RTF has been successfully converted to plain text and saved as output.txt.
 ---------------------------------------------------------------------------------------
 <pre><code>&lt;?php
 // Include the RtfConverter class
-require 'path/to/RtfConverter.php';
+require 'path/to/rtf_converter.php';
 
 use RtfConverter\RtfConverter;
 
