@@ -1,0 +1,13 @@
+{
+    "name": "ClankAI/rtf-converter",
+    "description": "A simple RTF to Plain Text Converter",
+    "type": "library",
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "RtfConverter\\": "src/"
+        }
+    }
+}
