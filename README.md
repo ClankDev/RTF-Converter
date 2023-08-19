@@ -31,6 +31,10 @@ pip install rtf-converter
 ***Install using npm:***
 <br>
 npm i rtf-converter
+
+***Install using composer:***
+<br>
+composer ClankAI/rtf-converter
 <br>
 <br><br><br>
 
