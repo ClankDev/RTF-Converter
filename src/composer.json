@@ -12,8 +12,8 @@
         }
     },
     "extra": {
-        "python-source": "src/python/",
-        "javascript-source": "src/javascript/",
-        "csharp-source": "src/csharp/"
+        "python-source": ".",
+        "javascript-source": ".",
+        "csharp-source": "."
     }
 }
