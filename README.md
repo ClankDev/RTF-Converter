@@ -107,6 +107,7 @@ except Exception as e:
 <br>
 ---------------------------------------------------------------------------------------
 <pre><code>
+// Be sure to save the test file as .mjs
 // Import the rtfToTxt function from the rtf-converter npm package
 import { rtfToTxt } from 'rtf-converter';
     
@@ -128,6 +129,7 @@ console.log(plainText);  // Output: Hello, World!</pre></code>
 <br>
 ---------------------------------------------------------------------------------------
 <pre><code>
+// Be sure to save the test file as .mjs
 // Import the rtfToTxt function from the rtf-converter npm package
 import { rtfToTxt } from 'rtf-converter';
 
