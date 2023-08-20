@@ -34,7 +34,7 @@ npm i rtf-converter
 
 ***Install using composer:***
 <br>
-composer require clank-ai/rtf-converter
+composer clank-ai/rtf-converter
 <br>
 <br><br><br>
 
@@ -164,17 +164,21 @@ fetch('sample.rtf')
 <br>
 ---------------------------------------------------------------------------------------
 <pre><code>&lt;?php
-// Include the RtfConverter class
-require 'path/to/rtf_converter.php';
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+require_once 'vendor/autoload.php';
 
 use RtfConverter\RtfConverter;
 
-// Sample RTF text
-$rtfText = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fswiss\\fcharset0 Helvetica;}}{\\colortbl ;\\red255\\green0\\blue0;}\\pard\\tx720\\tx1440\\tx2160\\tx2880\\tx3600\\tx4320\\tx5040\\tx5760\\tx6480\\tx7200\\tx7920\\tx8640\\ql\\qnatural\\pardirnatural\\f0\\fs24 \\cf0 Hello, World!}";
+$rtfText = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fswiss\\fcharset0 Helvetica;}{\\f1\\fswiss\\fcharset0 Arial;}}{\\colortbl ;\\red255\\green0\\blue0;\\red0\\green0\\blue255;} Hello, {\\f1\\b World}! This is {\\i italic} text. The — dash and the – dash are different. ‘ Quotes ’ are special too. Unicode: \\u8364 is the Euro symbol. Nested {\\b\\i bold and italic} text.}";
 
-// Convert RTF to plain text
+echo "Before conversion\n";
 $plainText = RtfConverter::rtfToTxt($rtfText);
-echo $plainText;  // Output: Hello, World!
+echo "After conversion:\n";
+echo htmlspecialchars($plainText, ENT_QUOTES) . "\n";
+echo "Type of output: " . gettype($plainText) . "\n";
+echo "Length of output: " . strlen($plainText) . "\n";
 ?&gt;</code></pre>
 ---------------------------------------------------------------------------------------
 
@@ -189,7 +193,7 @@ echo $plainText;  // Output: Hello, World!
 ---------------------------------------------------------------------------------------
 <pre><code>&lt;?php
 // Include the RtfConverter class
-require 'path/to/rtf_converter.php';
+require_once 'vendor/autoload.php';
 
 use RtfConverter\RtfConverter;
 
@@ -203,7 +207,6 @@ $plainText = RtfConverter::rtfToTxt($rtfContent);
 file_put_contents('output.txt', $plainText);
 
 echo "RTF has been successfully converted to plain text and saved as output.txt.";
-
 ?&gt;</code></pre>
 ---------------------------------------------------------------------------------------
 
@@ -216,15 +219,15 @@ echo "RTF has been successfully converted to plain text and saved as output.txt.
 ---------------------------------------------------------------------------------------
 <pre><code>&lt;?php
 // Include the RtfConverter class
-require 'path/to/rtf_converter.php';
+require_once 'vendor/autoload.php';
 
 use RtfConverter\RtfConverter;
 
 // Sample RTF text (potentially incorrect format)
 $rtfText = "{\\rtf1\\ansi\\Hello, World!}";
 
-// Attempt to convert RTF to plain text
 try {
+    // Attempt to convert RTF to plain text
     $plainText = RtfConverter::rtfToTxt($rtfText);
     echo $plainText;
 } catch (Exception $e) {
