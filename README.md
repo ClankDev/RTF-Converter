@@ -129,30 +129,51 @@ console.log(plainText);  // Output: Hello, World!</pre></code>
 <br>
 ---------------------------------------------------------------------------------------
 <pre><code>
-// Be sure to save the test file as .mjs
-// Import the rtfToTxt function from the rtf-converter npm package
-import { rtfToTxt } from 'rtf-converter';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RTF Converter</title>
+    <script src="node_modules/rtf-converter/rtf_converter.js"></script>
+    <script>
+        // Function to handle the conversion process
+        function convertRTF() {
+            var fileInput = document.getElementById('rtfFile');
+            var file = fileInput.files[0];
+            if (!file) {
+                alert('Please select an RTF file to convert.');
+                return;
+            }
 
-// Fetch RTF content from a file (for example purposes, let's say from a server)
-fetch('sample.rtf')
-    .then(response => response.text())
-    .then(rtfContent => {
-        // Convert RTF content to plain text
-        var plainText = rtfToTxt(rtfContent);
+            // Read the RTF content from the uploaded file
+            var reader = new FileReader();
+            reader.onload = function(event) {
+                var rtfContent = event.target.result;
+                
+                // Convert RTF content to plain text using the rtfToTxt function
+                var plainText = rtfToTxt(rtfContent);
 
-        // Save plain text to a new file
-        // This part can vary based on where and how you want to save the file
-        var blob = new Blob([plainText], { type: 'text/plain' });
-        var link = document.createElement('a');
-        link.href = window.URL.createObjectURL(blob);
-        link.download = 'output.txt';
-        link.click();
+                // Save plain text to a new file
+                var blob = new Blob([plainText], { type: 'text/plain' });
+                var link = document.createElement('a');
+                link.href = window.URL.createObjectURL(blob);
+                link.download = 'output.txt';
+                link.click();
 
-        console.log("RTF has been successfully converted to plain text and saved as output.txt.");
-    })
-    .catch(error => {
-        console.log("An error occurred during the conversion:", error);
-    });</pre></code>
+                console.log("RTF has been successfully converted to plain text and saved as output.txt.");
+            };
+            reader.readAsText(file);
+        }
+    </script>
+</head>
+<body>
+    <h1>RTF Converter</h1>
+    <input type="file" id="rtfFile" accept=".rtf" />
+    <button onclick="convertRTF()">Convert RTF to Text</button>
+</body>
+</html>
+</pre></code>
 ---------------------------------------------------------------------------------------
 
 <br><br><br>
