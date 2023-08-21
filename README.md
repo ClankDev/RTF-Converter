@@ -171,12 +171,24 @@ require_once 'vendor/autoload.php';
 
 use RtfConverter\RtfConverter;
 
-$rtfText = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fswiss\\fcharset0 Helvetica;}{\\f1\\fswiss\\fcharset0 Arial;}}{\\colortbl ;\\red255\\green0\\blue0;\\red0\\green0\\blue255;} Hello, {\\f1\\b World}! This is {\\i italic} text. The — dash and the – dash are different. ‘ Quotes ’ are special too. Unicode: \\u8364 is the Euro symbol. Nested {\\b\\i bold and italic} text.}";
+$rtfText = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033
+    {\\fonttbl{\\f0\\fswiss\\fcharset0 Helvetica;}{\\f1\\fswiss\\fcharset0 Arial;}}
+    {\\colortbl ;\\red255\\green0\\blue0;\\red0\\green0\\blue255;}
+    Hello, {\\f1\\b World}! This is {\\i italic} text. The — dash and the – dash are different.
+    ‘ Quotes ’ are special too. Unicode: \\u8364 is the Euro symbol.
+    Nested {\\b\\i bold and italic} text. Here's a list:
+    \\list\\listtemplateid1\\listhybrid
+    {\\listlevel\\levelnfc0\\leveljc0\\levelfollow0\\levelstartat1\\levelspace0\\levelindent0
+    {\\*\\levelmarker\\fi-360\\li720\\jclisttab\\tx720 }{\\leveltext\\leveltemplateid1'\\uc0\\u8226 ;}
+    {\\levelnumbers\\leveltemplateid2'\\u-3999 \\u8197 ;}}Hello from nested list!
+    }";
+    
+
 
 echo "Before conversion\n";
 $plainText = RtfConverter::rtfToTxt($rtfText);
 echo "After conversion:\n";
-echo htmlspecialchars($plainText, ENT_QUOTES) . "\n";
+echo $plainText . "\n";
 echo "Type of output: " . gettype($plainText) . "\n";
 echo "Length of output: " . strlen($plainText) . "\n";
 ?&gt;</code></pre>
@@ -334,3 +346,4 @@ Contributions, issues, and feature requests are welcome!
 **License**
 <br>
 This project is licensed under the MIT License - see the LICENSE file for details.
+
