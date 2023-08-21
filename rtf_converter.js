@@ -1,4 +1,4 @@
-function rtfToTxt(rtf) {
+export function rtfToTxt(rtf) {
     var pattern = /\\([a-z]{1,32})(-?\d{1,10})?[ ]?|\\'([0-9a-f]{2})|\\([^a-z])|([{}])|[\r\n]+|(.)|[\u2022]/gi;
 var destinations = new Set([
     'aftncn','aftnsep','aftnsepc','annotation','atnauthor','atndate','atnicn','atnid',
@@ -135,6 +135,3 @@ var destinations = new Set([
     return out.join('');
 }
 
-// Example
-//var rtfText = "{\\rtf1\\ansi Hello, {\\b World!}}";
-//console.log(rtfToTxt(rtfText)); // Output: " Hello, World!"
