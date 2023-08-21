@@ -114,7 +114,7 @@ except Exception as e:
 ---------------------------------------------------------------------------------------
 ```
 // Import the rtfToTxt function from the rtf-converter npm package
-<script src="node_modules/rtf-converter/rtf_converter.js"></script>
+import { rtfToTxt } from './node_modules/rtf-converter/rtf_converter.js';
     
 // Sample RTF text
 var rtfText = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fswiss\\fcharset0 Helvetica;}}{\\colortbl ;\\red255\\green0\\blue0;}\\pard\\tx720\\tx1440\\tx2160\\tx2880\\tx3600\\tx4320\\tx5040\\tx5760\\tx6480\\tx7200\\tx7920\\tx8640\\ql\\qnatural\\pardirnatural\\f0\\fs24 \\cf0 Hello, World!}";
@@ -141,47 +141,48 @@ console.log(plainText);  // Output: Hello, World!
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RTF Converter</title>
-<script>
-// Import the rtfToTxt function from the rtf-converter package
-import { rtfToTxt } from './node_modules/rtf-converter/rtf_converter.js';
 
-// Function to handle the conversion process
-function convertRTF() {
-  var fileInput = document.getElementById('rtfFile');
-  var file = fileInput.files[0];
-  if (!file) {
-    alert('Please select an RTF file to convert.');
-    return;
-  }
-
-  // Read the RTF content from the uploaded file
-  var reader = new FileReader();
-  reader.onload = function(event) {
-    var rtfContent = event.target.result;
-
-    // Convert RTF content to plain text using the rtfToTxt function
-    var plainText = rtfToTxt(rtfContent);
-
-    // Save plain text to a new file
-    var blob = new Blob([plainText], { type: 'text/plain' });
-    var link = document.createElement('a');
-    link.href = window.URL.createObjectURL(blob);
-    link.download = 'output.txt';
-    link.click();
-
-    console.log("RTF has been successfully converted to plain text and saved as output.txt.");
-  };
-  reader.readAsText(file);
-}
-
-// Make the convertRTF function globally accessible so that it can be called from the HTML file
-window.convertRTF = convertRTF;
-</script>
 </head>
 <body>
     <h1>RTF Converter</h1>
     <input type="file" id="rtfFile" accept=".rtf" />
     <button onclick="convertRTF()">Convert RTF to Text</button>
+    <script type="module">
+    // Import the rtfToTxt function from the rtf-converter package
+    import { rtfToTxt } from './node_modules/rtf-converter/rtf_converter.js';
+
+    // Function to handle the conversion process
+    function convertRTF() {
+        var fileInput = document.getElementById('rtfFile');
+        var file = fileInput.files[0];
+        if (!file) {
+        alert('Please select an RTF file to convert.');
+        return;
+        }
+
+        // Read the RTF content from the uploaded file
+        var reader = new FileReader();
+        reader.onload = function(event) {
+        var rtfContent = event.target.result;
+
+        // Convert RTF content to plain text using the rtfToTxt function
+        var plainText = rtfToTxt(rtfContent);
+
+        // Save plain text to a new file
+        var blob = new Blob([plainText], { type: 'text/plain' });
+        var link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.download = 'output.txt';
+        link.click();
+
+        console.log("RTF has been successfully converted to plain text and saved as output.txt.");
+        };
+        reader.readAsText(file);
+    }
+
+    // Make the convertRTF function globally accessible so that it can be called from the HTML file
+    window.convertRTF = convertRTF;
+    </script>
 </body>
 </html>
 ```
@@ -387,4 +388,3 @@ Contributions, issues, and feature requests are welcome!
 **License**
 <br>
 This project is licensed under the MIT License - see the LICENSE file for details.
-
