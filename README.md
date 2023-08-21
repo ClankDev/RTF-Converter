@@ -43,14 +43,16 @@ composer require clank-ai/rtf-converter
 *Convert a simple RTF string to plain text:*
 <br>
 ---------------------------------------------------------------------------------------
-<pre><code>from rtf_converter import rtf_to_txt
+```
+from rtf_converter import rtf_to_txt
 
 # Sample RTF text
 rtf_text = r"{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\fswiss\fcharset0 Helvetica;}}{\colortbl ;\red255\green0\blue0;}\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\ql\qnatural\pardirnatural\f0\fs24 \cf0 Hello, World!}"
 
 # Convert RTF to plain text
 plain_text = rtf_to_txt(rtf_text)
-print(plain_text)  # Output: Hello, World!</pre></code>
+print(plain_text)  # Output: Hello, World!
+````
 ---------------------------------------------------------------------------------------
 
 <br><br><br>
@@ -62,7 +64,8 @@ print(plain_text)  # Output: Hello, World!</pre></code>
 *Read file from the disk, convert its content to plain text using the rtf_to_txt function, and then save the result to a new text file:*
 <br>
 ---------------------------------------------------------------------------------------
-<pre><code>from rtf_converter import rtf_to_txt
+```
+from rtf_converter import rtf_to_txt
 
 # Read RTF file
 with open('sample.rtf', 'r', encoding='utf-8') as file:
@@ -75,7 +78,8 @@ plain_text = rtf_to_txt(rtf_content)
 with open('output.txt', 'w', encoding='utf-8') as file:
     file.write(plain_text)
 
-print("RTF has been successfully converted to plain text and saved as output.txt.")</pre></code>
+print("RTF has been successfully converted to plain text and saved as output.txt.")
+```
 ---------------------------------------------------------------------------------------
 
 <br><br><br>
@@ -85,7 +89,8 @@ print("RTF has been successfully converted to plain text and saved as output.txt
 *In case the RTF content is not formatted correctly, the rtf_to_txt function might raise an exception. Here is how you can handle such errors gracefully:*
 <br>
 ---------------------------------------------------------------------------------------
-<pre><code>from rtf_converter import rtf_to_txt
+```
+from rtf_converter import rtf_to_txt
 
 # Sample RTF text (potentially incorrect format)
 rtf_text = r"{\rtf1\ansi\Hello, World!}"
@@ -95,7 +100,8 @@ try:
     plain_text = rtf_to_txt(rtf_text)
     print(plain_text)
 except Exception as e:
-    print("An error occurred during the conversion:", str(e))</pre></code>
+    print("An error occurred during the conversion:", str(e))
+```
 ---------------------------------------------------------------------------------------
 
 <br><br><br>
@@ -106,7 +112,7 @@ except Exception as e:
 *Convert a simple RTF string to plain text:* 
 <br>
 ---------------------------------------------------------------------------------------
-<pre><code>
+```
 // Import the rtfToTxt function from the rtf-converter npm package
 <script src="node_modules/rtf-converter/rtf_converter.js"></script>
     
@@ -115,7 +121,8 @@ var rtfText = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\deflang1033{\\fonttbl{\\f0\\fs
 
 // Convert RTF to plain text
 var plainText = rtfToTxt(rtfText);
-console.log(plainText);  // Output: Hello, World!</pre></code>
+console.log(plainText);  // Output: Hello, World!
+```
 ---------------------------------------------------------------------------------------
 
 <br><br><br>
@@ -127,7 +134,7 @@ console.log(plainText);  // Output: Hello, World!</pre></code>
 *Read file from the disk (or fetch from a server), convert its content to plain text using the rtfToTxt function, and then save the result to a new text file:* 
 <br>
 ---------------------------------------------------------------------------------------
-<pre><code>
+```
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -172,7 +179,7 @@ console.log(plainText);  // Output: Hello, World!</pre></code>
     <button onclick="convertRTF()">Convert RTF to Text</button>
 </body>
 </html>
-</pre></code>
+```
 ---------------------------------------------------------------------------------------
 
 <br><br><br>
@@ -183,7 +190,8 @@ console.log(plainText);  // Output: Hello, World!</pre></code>
 *Convert a simple RTF string to plain text:* 
 <br>
 ---------------------------------------------------------------------------------------
-<pre><code>&lt;?php
+```
+<?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -211,7 +219,8 @@ echo "After conversion:\n";
 echo $plainText . "\n";
 echo "Type of output: " . gettype($plainText) . "\n";
 echo "Length of output: " . strlen($plainText) . "\n";
-?&gt;</code></pre>
+?>
+```
 ---------------------------------------------------------------------------------------
 
 <br><br><br>
@@ -223,7 +232,8 @@ echo "Length of output: " . strlen($plainText) . "\n";
 *Read file from the disk, convert its content to plain text using the rtfToTxt function, and then save the result to a new text file:* 
 <br>
 ---------------------------------------------------------------------------------------
-<pre><code>&lt;?php
+```
+<?php
 // Include the RtfConverter class
 require_once 'vendor/autoload.php';
 
@@ -239,7 +249,8 @@ $plainText = RtfConverter::rtfToTxt($rtfContent);
 file_put_contents('output.txt', $plainText);
 
 echo "RTF has been successfully converted to plain text and saved as output.txt.";
-?&gt;</code></pre>
+?>
+```
 ---------------------------------------------------------------------------------------
 
 <br><br><br>
@@ -249,7 +260,8 @@ echo "RTF has been successfully converted to plain text and saved as output.txt.
 *In case the RTF content is not formatted correctly, the rtfToTxt function might raise an exception. Here is how you can handle such errors gracefully:* 
 <br>
 ---------------------------------------------------------------------------------------
-<pre><code>&lt;?php
+```
+<?php
 // Include the RtfConverter class
 require_once 'vendor/autoload.php';
 
@@ -265,7 +277,8 @@ try {
 } catch (Exception $e) {
     echo "An error occurred during the conversion: " . $e->getMessage();
 }
-?&gt;</code></pre>
+?>
+```
 ---------------------------------------------------------------------------------------
 
 <br><br><br>
@@ -275,7 +288,8 @@ try {
 *Convert a simple RTF string to plain text:* 
 <br>
 ---------------------------------------------------------------------------------------
-<pre><code>#include &lt;iostream&gt;
+```
+#include &lt;iostream&gt;
 #include &lt;string&gt;
 #include "rtf_converter.cpp" // Assume this header contains the declaration of rtf_to_txt function
 
@@ -290,7 +304,7 @@ int main() {
     
     return 0;
 }
-</code></pre>
+```
 ---------------------------------------------------------------------------------------
 
 <br><br><br>
@@ -302,7 +316,8 @@ int main() {
 *Read file from the disk, convert its content to plain text using the rtf_to_txt function, and then save the result to a new text file:* 
 <br>
 ---------------------------------------------------------------------------------------
-<pre><code>#include &lt;iostream&gt;
+```
+#include &lt;iostream&gt;
 #include &lt;fstream&gt;
 #include &lt;string&gt;
 #include "rtf_converter.cpp" // Assume this header contains the declaration of rtf_to_txt function
@@ -323,7 +338,7 @@ int main() {
 
     return 0;
 }
-</code></pre>
+```
 ---------------------------------------------------------------------------------------
 
 <br><br><br>
@@ -333,7 +348,8 @@ int main() {
 *In case the RTF content is not formatted correctly, the rtf_to_txt function might throw an exception. Here is how you can handle such errors gracefully:* 
 <br>
 ---------------------------------------------------------------------------------------
-<pre><code>#include &lt;iostream&gt;
+```
+#include &lt;iostream&gt;
 #include &lt;string&gt;
 #include &lt;exception&gt;
 #include "rtf_converter.cpp" // Assume this header contains the declaration of rtf_to_txt function
@@ -352,7 +368,7 @@ int main() {
     
     return 0;
 }
-</code></pre>
+```
 ---------------------------------------------------------------------------------------
 
 <br><br><br>
