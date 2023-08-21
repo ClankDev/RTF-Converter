@@ -141,37 +141,42 @@ console.log(plainText);  // Output: Hello, World!
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RTF Converter</title>
-    <script src="node_modules/rtf-converter/rtf_converter.js"></script>
-    <script>
-        // Function to handle the conversion process
-        function convertRTF() {
-            var fileInput = document.getElementById('rtfFile');
-            var file = fileInput.files[0];
-            if (!file) {
-                alert('Please select an RTF file to convert.');
-                return;
-            }
+<script>
+// Import the rtfToTxt function from the rtf-converter package
+import { rtfToTxt } from './node_modules/rtf-converter/rtf_converter.js';
 
-            // Read the RTF content from the uploaded file
-            var reader = new FileReader();
-            reader.onload = function(event) {
-                var rtfContent = event.target.result;
-                
-                // Convert RTF content to plain text using the rtfToTxt function
-                var plainText = rtfToTxt(rtfContent);
+// Function to handle the conversion process
+function convertRTF() {
+  var fileInput = document.getElementById('rtfFile');
+  var file = fileInput.files[0];
+  if (!file) {
+    alert('Please select an RTF file to convert.');
+    return;
+  }
 
-                // Save plain text to a new file
-                var blob = new Blob([plainText], { type: 'text/plain' });
-                var link = document.createElement('a');
-                link.href = window.URL.createObjectURL(blob);
-                link.download = 'output.txt';
-                link.click();
+  // Read the RTF content from the uploaded file
+  var reader = new FileReader();
+  reader.onload = function(event) {
+    var rtfContent = event.target.result;
 
-                console.log("RTF has been successfully converted to plain text and saved as output.txt.");
-            };
-            reader.readAsText(file);
-        }
-    </script>
+    // Convert RTF content to plain text using the rtfToTxt function
+    var plainText = rtfToTxt(rtfContent);
+
+    // Save plain text to a new file
+    var blob = new Blob([plainText], { type: 'text/plain' });
+    var link = document.createElement('a');
+    link.href = window.URL.createObjectURL(blob);
+    link.download = 'output.txt';
+    link.click();
+
+    console.log("RTF has been successfully converted to plain text and saved as output.txt.");
+  };
+  reader.readAsText(file);
+}
+
+// Make the convertRTF function globally accessible so that it can be called from the HTML file
+window.convertRTF = convertRTF;
+</script>
 </head>
 <body>
     <h1>RTF Converter</h1>
